@@ -16,7 +16,7 @@ To remain in line with the experiments conducted on the [Petke et al. dataset](h
 
 This filtering is achieved using the following script:
 ```shell
-python filtering.py
+python repairllama_filtering.py
 ```
 
 The second folder `context_size_3_filtered` contains the filtered patches used in our experiments.
