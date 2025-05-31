@@ -73,7 +73,7 @@ def process_directory(directory, method, patches_dir):
 def main():
     parser = argparse.ArgumentParser(description="Process fixcheck results.")
     parser.add_argument('--results-dir', type=str, required=True, help='Relative path to the results directory, e.g. fixcheck-output/defects-repairing')
-    parser.add_argument('--patches-dir', type=str, required=True, help='Relative path to the all patches used in experiment run, e.g. ../../Dataset/FYP_Dataset/all_patches')
+    parser.add_argument('--patches-dir', type=str, required=True, help='Relative path to the all patches used in experiment run, e.g. ../../datasets/petke/all_patches')
     parser.add_argument('--out', type=str, required=True, help='Output CSV filename, e.g. fixcheck_results_8h_test.csv')
     args = parser.parse_args()
 

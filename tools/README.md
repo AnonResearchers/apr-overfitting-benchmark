@@ -127,10 +127,16 @@ T. Le-Cong, D.-M. Luong, X. B. D. Le, D. Lo, N.-H. Tran, B. Quang-Huy, and Q.-T.
   - Then add Daikon relevant values to bashrc: `export DAIKONDIR="/home/user/workspace/daikon-5.8.20"` `export PATH=$DAIKONDIR:$PATH` `export CLASSPATH=$DAIKONDIR/daikon.jar:$CLASSPATH`
   - `make -C $DAIKONDIR rebuild-everything`
 2. Install required libraries: `conda env create -f environment.yml`
-3. In `fyp.py` at the top replace the JAVA_11_HOME constant with your path to your java 11 installation and the patches path as instructed by the comments.
-4. Generate invariants using Daikon and Defects4J by running `python fyp.py`
-5. To analyse invariants and classify patches, run `python experiment.py --c 0`
-6. Results will be saved under `results.csv`
+3. In `petke.py` (for the classical dataset) and `repairllama.py` (for the repairllama dataset) at the top replace the JAVA_11_HOME constant with your path to your java 11 installation and the patches path as instructed by the comments.
+4. Generate invariants using Daikon and Defects4J by running:
+  - Classical Dataset: `python petke.py`
+  - Repairllama Dataset: `python repairllama.py`
+5. To analyse invariants and classify patches, run:
+  - Classical Dataset: `python petke_experiment.py --c 0`
+  - Repairllama Dataset: `python repairllama_experiment.py --c 0`
+6. Results will be saved under:
+  - `petke_results.csv` for the classical dataset
+  - `repairllama_results.csv` for the repairllama dataset 
 
 ---
 
