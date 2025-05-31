@@ -90,11 +90,22 @@ in 2024 *IEEE Conference on Software Testing, Verification and Validation (ICST)
 **Instructions:**  
 1. Follow setup instructions in `fixcheck/README.md`
 2. We found an issue setting up llama-cpp which we resolved by installing via URL: `pip install --no-cache-dir llama-cpp-python==0.2.85 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu122`
-3. In `experiments/run-fixcheck-fyp.py` replace the four constants at the top as instructed by the comments to include your own java path etc.
-4. In one terminal, launch the LLM by running `python llms/replit-code.py` and wait a few seconds until it is running.
-5. In another terminal, launch fixcheck by running `python experiments/run-fixcheck-fyp.py`
-6. Once fixcheck is done, get patch classifications by running `python get_results.py`
-7. Results will be saved under `fixcheck_results_8h_test.csv`
+3. Configure the scripts for your environment by replacing the five constants at the top as instructed by the comments to include your own java path etc. in the following files for each dataset:
+  - Classical Dataset: In `experiments/run-fixcheck-petke.py` 
+  - Repairllama Dataset: In `experiments/run-fixcheck-repairllama.py`
+4. In one terminal, launch the LLM by running `python llms/replit-code.py` and wait until it is running.
+5. In another terminal, launch fixcheck by running:
+  - Classical Dataset: `python experiments/run-fixcheck-fyp.py`
+  - Repairllama Dataset: `python experiments/run-fixcheck-repairllama.py`
+6. Once fixcheck is done, this will generate an output folder at `fixcheck-output/`. Rename these as the following:
+  - Classical Dataset: `fixcheck-output/` -> `classical-fixcheck-output/`
+  - Repairllama Dataset: `fixcheck-output/` -> `repairllama-fixcheck-output/`
+7. Get patch classifications by running:
+  - `python get_results.py --results-dir classical-fixcheck-output/defects-repairing --patches-dir ../../datasets/petke/all_patches --out fixcheck_results_8h.csv` for the classical dataset
+  - `python get_results.py --results-dir repairllama-fixcheck-output/defects-repairing --patches-dir ../../datasets/repairllama/context_size_3_filtered --out fixcheck_results_repairllama.csv` for the repairllama dataset
+8. Results will be saved under:
+  - `fixcheck_results_8h.csv` for the classical dataset
+  - `fixcheck_results_repairllama.csv` for the repairllama dataset
 
 ---
 
