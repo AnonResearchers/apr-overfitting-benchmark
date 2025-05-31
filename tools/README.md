@@ -64,9 +64,15 @@ A. Z. Yang, S. Kolak, V. J. Hellendoorn, R. Martins, and C. L. Goues,
 1. As outlined in the tool's README, `CUDA version >= 11.4` along with the necessary drivers is required, as well as `torch (version 2.0.1)`.
 2. Run `bash init_env.sh`
 3. We found a missing dependency: `pip install accelerate`
-4. To generate entropy scores for each patch, run `python patches/fyp_patch_entropy.py`
-5. To use the entropy scores to classify each patch, run `python analysis_notebooks/analysis_fyp.py`
-6. Results will be saved under `entropy_analysis_fyp_cutoff_-0.55.csv`
+4. To generate entropy scores for each patch, run:
+  - `python patches/petke_patch_entropy.py` for the classical dataset
+  - `python patches/repairllama_patch_entropy.py` for the repairllama dataset
+5. To use the entropy scores to classify each patch, run:
+  - `python analysis_notebooks/analysis_petke.py` for the classical dataset
+  - `python analysis_notebooks/analysis_repairllama.py` for the repairllama dataset
+6. Results will be saved under:
+  - `entropy_analysis_petke_cutoff_-0.55.csv` for the classical dataset
+  - `entropy_analysis_repairllama_cutoff_-0.55.csv` for the repairllama dataset
 
 ---
 
