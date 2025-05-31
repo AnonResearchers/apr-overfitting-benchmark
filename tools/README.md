@@ -37,11 +37,15 @@ Below are instructions to replicate our benchmarking results.
 - **Original Repository:** https://github.com/ngocpq/MIPI
 
 **Instructions:**  
-1. Follow setup instructions in `mipi/README.md` to setup environment and download model
+1. Follow setup instructions in `mipi/README.md` to set up the environment and download the model
 2. Change your working directory to `src/mipi-code2vec` and run `pip install -r requirements.txt` and `bash build_extractor.sh`
 3. We found a missing dependency: `pip install protobuf==3.20.*`
-4. To run experiments, ensure your working directory is `src/mipi-code2vec` and run `python mipi_sample.py mipi_patches_8h_deduplicated.json`
-5. Results will be saved under `src/mipi-code2vec/mipi_patches_8h_deduplicated_results.csv`
+4. To run experiments, ensure your working directory is `src/mipi-code2vec` and run:
+  - `python mipi_sample.py mipi_patches_8h_deduplicated.json --dataset petke` for the classical dataset
+  - `python mipi_sample.py mipi_patches_repairllama.json --dataset repairllama` for the repairllama dataset
+5. Results will be saved under:
+  - `src/mipi-code2vec/mipi_patches_8h_deduplicated_results.csv` for the classical dataset
+  - `src/mipi-code2vec/mipi_patches_repairllama_results.csv` for the repairllama dataset
 
 ---
 
@@ -158,7 +162,11 @@ in Proceedings of the 35th *IEEE/ACM International Conference on Automated Softw
 2. Setup the tool environment:
   - `pip install bert-serving-client==1.10.0 && pip install scikit-learn && pip install gensim && pip install nltk`
   - `python -m nltk.downloader punkt`
-3. To classify patches, first ensure the server is running, then change your working directory to `DL4PatchCorrectness/prediction` and run `python run.py --dataset <petke|repairllama>`, where `petke` is for the full classical dataset and `repairllama` is for the repairllama patches.
-4. Results for the classical dataset will be saved under `patch_results_petke_dt.csv`, while repairllama results will be saved under `patch_results_repairllama_dt.csv`.
+3. To classify patches, first ensure the server is running, then change your working directory to `DL4PatchCorrectness/prediction` and run:
+  - `python run.py --dataset <petke|repairllama>`
+    - `petke` is for the full classical dataset and `repairllama` is for the repairllama dataset.
+4. Results will be saved under:
+  - `patch_results_petke_dt.csv` for the classical dataset
+  - `patch_results_repairllama_dt.csv` for the repairllama dataset
 
 ---
