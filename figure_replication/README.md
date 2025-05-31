@@ -112,11 +112,6 @@ python produce_violin_plots.py --input_csv ../petke_8h_figures/raw_data/mcc_by_b
 python produce_tool_apr_heatmap.py ../petke_8h_figures/raw_data/mcc_by_apr_tool.csv --output ../petke_8h_figures/visualisations/rq1/apr_tool_mcc_heatmap.png
 ```
 
-```bash
-# Generate bug hardness plot and regression stats
-python produce_hardness_plot.py ../petke_8h_figures/raw_data/f1.csv --deciles 9 --output ../petke_8h_figures/visualisations/rq1/bug_hardness_f1.png
-```
-
 #### RQ3 Figures
 
 ```bash

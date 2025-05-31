@@ -262,23 +262,6 @@ def main():
     if result.stderr:
         print(result.stderr, file=sys.stderr)
 
-    # Generate bug hardness plot and regression stats
-    print("Generating bug hardness plot and regression stats...")
-    result = subprocess.run(
-        [
-            sys.executable,
-            "produce_hardness_plot.py",
-            f"{output_dir}/raw_data/f1.csv",
-            "--deciles", "9",
-            "--output", f"{output_dir}/visualisations/rq1/bug_hardness_f1.png"
-        ],
-        capture_output=True,
-        text=True
-    )
-    print(result.stdout)
-    if result.stderr:
-        print(result.stderr, file=sys.stderr)
-
     print("### RQ1 Figure Generation Completed ###")
     print("\n\n### RQ3 Figure Generation ###")
 

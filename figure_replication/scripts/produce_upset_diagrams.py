@@ -27,49 +27,6 @@ plt.rcParams.update({
     'savefig.format': 'pdf',
 })
 
-def compute_jaccard(sets_dict, output_dir, matrix_name):
-    """
-    Compute pairwise Jaccard similarity for the given sets_dict,
-    save only long-format CSV for LaTeX heatmaps as jaccard_{matrix_name}.csv.
-    """
-    tools = list(sets_dict.keys())
-    # Initialize DataFrame
-    jaccard = pd.DataFrame(0.0, index=tools, columns=tools)
-    # Compute similarities
-    for a, b in combinations(tools, 2):
-        A = sets_dict[a]
-        B = sets_dict[b]
-        union = A | B
-        j_value = len(A & B) / len(union) if union else 0.0
-        jaccard.at[a, b] = jaccard.at[b, a] = j_value
-    # Fill diagonal
-    for t in tools:
-        jaccard.at[t, t] = 1.0
-
-    # Convert to long format for LaTeX
-    label_to_idx = {label: i for i, label in enumerate(jaccard.columns)}
-    long_format = []
-    for row in jaccard.index:
-        for col in jaccard.columns:
-            value = round(jaccard.at[row, col], 2)
-            long_format.append({
-                "x": label_to_idx[col],
-                "y": label_to_idx[row],
-                "c": value
-            })
-    long_df = pd.DataFrame(long_format)
-
-    # Ensure output directory exists
-    os.makedirs(output_dir, exist_ok=True)
-
-    # Save long-format CSV as the only CSV output
-    path = os.path.join(output_dir, f"jaccard_{matrix_name}.csv")
-    long_df.to_csv(path, index=False)
-
-    # Print result
-    print(f"Jaccard similarity matrix saved to {path} (long format)")
-    return jaccard
-
 def load_results(input_dir: str, results_name: str):
     """
     Scan each immediate subdirectory of input_dir for a CSV named
@@ -202,10 +159,6 @@ def main():
     plot_upset(overfit_sets,
               title="Correctly Classified: Overfitting Patches",
               output_dir=args.output_dir)
-    
-    # 5) compute Jaccard matrices
-    compute_jaccard(correct_sets, args.output_dir, 'correct')
-    compute_jaccard(overfit_sets, args.output_dir, 'overfitting')
 
 
 if __name__ == "__main__":
