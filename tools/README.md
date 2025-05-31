@@ -158,7 +158,7 @@ in Proceedings of the 35th *IEEE/ACM International Conference on Automated Softw
 2. Setup the tool environment:
   - `pip install bert-serving-client==1.10.0 && pip install scikit-learn && pip install gensim && pip install nltk`
   - `python -m nltk.downloader punkt`
-3. To classify patches, first ensure the server is running, then change your working directory to `DL4PatchCorrectness/prediction` and run `python fyp.py`
-4. Results will be saved under `patch_results_dt.csv`
+3. To classify patches, first ensure the server is running, then change your working directory to `DL4PatchCorrectness/prediction` and run `python run.py --dataset <petke|repairllama>`, where `petke` is for the full classical dataset and `repairllama` is for the repairllama patches.
+4. Results for the classical dataset will be saved under `patch_results_petke_dt.csv`, while repairllama results will be saved under `patch_results_repairllama_dt.csv`.
 
 ---
