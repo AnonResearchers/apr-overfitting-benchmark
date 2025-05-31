@@ -138,12 +138,16 @@ X. Zhou, B. Xu, K. Kim, D. Han, H. H. Nguyen, T. Le-Cong, J. He, B. Le, and D. L
 1. Run `bash install_library.sh`
 2. To download the model via terminal:
   - `pip install gdown`
-  - `gdown --folder https://drive.google.com/drive/folders/1MryWp2iqXAVo4UHxnN-bTspQkysM7Fpy?usp=sharing`
+  - `gdown --folder https://drive.google.com/drive/folders/1MryWp2iqXAVo4UHxnN-bTspQkysM7Fpy?usp=sharing` (link from the original repository)
   - Place it under `pretrained_model/best`
 3. We used deepspeed as our GPU was not selected by default: `pip install deepspeed`
 4. To start the tool, run `bash run_pipeline.sh`
+  - To switch between the classical and repairllama datasets, modify the first line in this script. For the classical dataset, use `'8h-deduplicated'`. For the repairllama dataset, use `'repairllama'`. 
 5. To generate classifications from LLM4PatchCorrect run `python read_results_enhanced.py`
-6. Results will be saved under `8h-deduplicated_results.csv`
+  - To switch between the classical and repairllama datasets, edit lines 19 and 20 of this script. For the classical dataset, uncomment line 19 and comment out line 20, and vice versa for the repairllama dataset.
+6. Results will be saved under:
+  - `8h-deduplicated_results.csv` for the classical dataset
+  - `repairllama_results.csv` for the repairllama dataset
 
 ---
 
