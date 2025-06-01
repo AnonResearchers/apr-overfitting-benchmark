@@ -14,7 +14,7 @@ apr-overfitting-benchmark/
 │       ├── context_size_3_filtered/ # Filtered dataset for our experiments
 │       ├── repairllama_filtering.py # Filtering script
 │       └── README.md # Explaining the source of the patches and filtering script
-│── defects4j_projects/ Defects4J projects required to replicate experiments for each dataset
+│── defects4j_projects/ # Defects4J projects required to replicate experiments for each dataset
 │   ├── petke/ 
 │   ├── repairllama/
 │   ├── checkout_d4j.py # Script to download all necessary buggy and fixed Defects4J projects (see below)
