@@ -68,6 +68,8 @@ A. Z. Yang, S. Kolak, V. J. Hellendoorn, R. Martins, and C. L. Goues,
 
 Minimal changes were made to the Yang et al. tool in the way bug information is inferred; the modified version detects the Defects4J project under patch and its version by parsing our structured patch filenames directly.
 
+**Note: The model used by this tool requires substantial GPU power. We were able to complete our experiments using an NVIDIA RTX 3090.**
+
 **Instructions:**  
 1. As outlined in the tool's README, `CUDA version >= 11.4` along with the necessary drivers is required, as well as `torch (version 2.0.1)`.
 2. Run `bash init_env.sh`
