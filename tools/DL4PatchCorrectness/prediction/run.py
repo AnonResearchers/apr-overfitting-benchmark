@@ -252,7 +252,7 @@ if __name__ == '__main__':
         train_model(train_data=train_data, labels=label, algorithm=algorithm)
 
     # Generate CSV output path and process patches
-    output_csv = f"patch_results_{algorithm}.csv"
+    output_csv = f"patch_results_{args.dataset}_{algorithm}.csv"
     process_patches_directory(directory_path, algorithm, output_csv)
     
     # Calculate execution time
