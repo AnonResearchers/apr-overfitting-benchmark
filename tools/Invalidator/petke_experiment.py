@@ -23,9 +23,9 @@ _MODEL_PATH = "model/model.joblib"
 
 _INVARIANTS = _PROCESSED_DATA_DIR + "invariants/"
 _PATCH_INFO = _RAW_DATA + "patch_info/patches.json"
-_INFO_PATH = _RAW_DATA + "patch_info/fyp_patches/{}.json"
+_INFO_PATH = _RAW_DATA + "patch_info/petke_patches/{}.json"
 
-with open('fyp_data/raw_data/patch_info/patch_number_to_filename.json', 'r') as f:
+with open('petke_data/raw_data/patch_info/patch_number_to_filename.json', 'r') as f:
     patch_num_to_filename = json.load(f)
 
 logger = Logger("log", "eval")

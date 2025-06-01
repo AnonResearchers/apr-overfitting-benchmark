@@ -12,7 +12,7 @@ import json
 JAVA_11_PATH = "/usr/lib/jvm/java-1.11.0-openjdk-amd64"
 
 # Replace with the actual absolute path to the 8h deduplicated patch set
-PATCHES_PATH = "/home/user/x/fyp-overfitting-mitigation-apr/datasets/petke/patches_by_time/patches_8h_deduplicated"
+PATCHES_PATH = "/home/user/x/apr-overfitting-benchmark/datasets/petke/patches_by_time/patches_8h_deduplicated"
 
 def to_package_pattern(fully_qualified):
     base = fully_qualified.split('$', 1)[0]          # drop inner‑class part

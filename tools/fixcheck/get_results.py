@@ -3,7 +3,7 @@ import csv
 import argparse
 
 def determine_actual_correctness(patch_name, patches_dir):
-    """Determine actual correctness based on where the patch is located in FYP_DATASET"""
+    """Determine actual correctness based on which subdirectory the patch is located in"""
     correct_path = os.path.join(patches_dir, "correct", f'{patch_name}.diff')
     overfitting_path = os.path.join(patches_dir, "overfitting", f'{patch_name}.diff')
     

@@ -11,8 +11,8 @@ import json
 # Replace with your actual Java 11 installation path
 JAVA_11_PATH = "/usr/lib/jvm/java-1.11.0-openjdk-amd64"
 
-# Replace with the actual absolute path to the 8h deduplicated patch set
-PATCHES_PATH = "/home/user/x/fyp-overfitting-mitigation-apr/datasets/repairllama/context_size_3_filtered"
+# Replace with the actual absolute path to the repairllama patch set
+PATCHES_PATH = "/home/user/x/apr-overfitting-benchmark/datasets/repairllama/context_size_3_filtered"
 
 def to_package_pattern(fully_qualified):
     # Convert a fully qualified class name to a regex pattern for package selection
@@ -304,7 +304,6 @@ original_path = os.environ.get("PATH")
 os.environ["JAVA_HOME"] = JAVA_11_PATH
 os.environ["PATH"] = f"{JAVA_11_PATH}/bin:{original_path}"
 
-# project_root = "../../Dataset/FYP_Dataset"
 project_root = "../../defects4j_projects/repairllama"
 invariants_dir = "repairllama_data/processed_data/invariants"
 log_path = "repairllama_compile_failures.log"
