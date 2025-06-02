@@ -14,16 +14,16 @@ import time
 JAVA_11_PATH = '/usr/lib/jvm/java-1.11.0-openjdk-amd64'
 
 # Replace with the actual absolute path to fixcheck
-os.environ['FIXCHECK'] = '/home/user/workspace/FYP/Tools/fixcheck'
+os.environ['FIXCHECK'] = '/home/user/x/apr-overfitting-benchmark/tools/fixcheck'
 FIXCHECK = os.getenv('FIXCHECK')
 
 # Replace with the actual absolute path to fixcheck/tmp
-os.environ['DEFECT_REPAIRING_DATASET'] = '/home/user/workspace/FYP/Tools/fixcheck/tmp'
+os.environ['DEFECT_REPAIRING_DATASET'] = '/home/user/x/apr-overfitting-benchmark/tools/fixcheck/tmp'
 DEFECT_REPAIRING_DATASET = os.getenv('DEFECT_REPAIRING_DATASET')
 
 # Replace with the actual absolute path to the replication package
-BASE_BUG_DIR = '/home/user/x/fyp-overfitting-mitigation-apr/defects4j_projects/repairllama'
-BASE_PATCH_DIR = '/home/user/x/fyp-overfitting-mitigation-apr/datasets/repairllama/context_size_3_filtered'
+BASE_BUG_DIR = '/home/user/x/apr-overfitting-benchmark/defects4j_projects/repairllama'
+BASE_PATCH_DIR = '/home/user/x/apr-overfitting-benchmark/datasets/repairllama/context_size_3_filtered'
 
 # Replaced for new patches
 OUTPUTS_DIR = 'fixcheck-output'

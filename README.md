@@ -1,7 +1,22 @@
 # Empirical Evaluation of Patch Overfitting Detection Approaches in Automated Program Repair
 This is the replication package for "Empirical Evaluation of Patch Overfitting Detection Approaches in Automated Program Repair".
 
-## Directory Structure
+## Structure
+
+The following is the overall structure for our repository. Please find below the paths to information/figures we reference in our submission.
+
+### Figures Referenced in Submission
+
+These links will take you to the figures referenced in the paper.
+
+- Section IV-3 (Page 4): Tool-specific data preprocessing and other requirements can be found in [`tools/README.md`](./tools/README.md)
+- Section V-A4 (Page 6): UpSet plots for the repairllama dataset - [correct](./figure_replication/repairllama_figures/visualisations/rq1/correctly_classified_correct_patches.png) & [overfitting](./figure_replication/repairllama_figures/visualisations/rq1/correctly_classified_overfitting_patches.png) patches.
+- Section V-A5 (Page 7): Project-level MCC box plots for the [classical dataset](./figure_replication/petke_8h_figures/visualisations/rq1/project_boxplot.png) and [repairllama dataset](./figure_replication/repairllama_figures/visualisations/rq1/project_boxplot.png).
+- Section V-C1 (Page 8): Complete tables for bug-level number of patches to inspect using each overfitting tool and our baselines for the [classical dataset](./figure_replication/petke_8h_figures/tables/rq3/rs-combined.tex) and [repairllama dataset](./figure_replication/repairllama_figures/tables/rq3/rs-combined.tex).
+- Section V-C1 (Page 9): Complete tables for bug-level number of inspections for the [classical (1st hour subset) dataset](./figure_replication/petke_1h_figures/tables/rq3/rs-combined.tex).
+- Section V-C2 (Page 10): [Metrics grid of each tool's performance against the WPC baseline for the repairllama dataset](./figure_replication/repairllama_figures/visualisations/rq3/tools_vs_wbc.png)
+
+### Repository Directories
 
 ```
 apr-overfitting-benchmark/

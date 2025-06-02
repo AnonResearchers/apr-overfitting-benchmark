@@ -14,20 +14,20 @@ import time
 JAVA_11_PATH = '/usr/lib/jvm/java-1.11.0-openjdk-amd64'
 
 # Replace with the actual absolute path to fixcheck
-os.environ['FIXCHECK'] = '/home/user/workspace/FYP/Tools/fixcheck'
+os.environ['FIXCHECK'] = '/home/user/x/apr-overfitting-benchmark/tools/fixcheck'
 FIXCHECK = os.getenv('FIXCHECK')
 
 # Replace with the actual absolute path to fixcheck/tmp
-os.environ['DEFECT_REPAIRING_DATASET'] = '/home/user/workspace/FYP/Tools/fixcheck/tmp'
+os.environ['DEFECT_REPAIRING_DATASET'] = '/home/user/x/apr-overfitting-benchmark/tools/fixcheck/tmp'
 DEFECT_REPAIRING_DATASET = os.getenv('DEFECT_REPAIRING_DATASET')
 
 # Replace with the actual absolute path to the replication package
-BASE_BUG_DIR = '/home/user/x/fyp-overfitting-mitigation-apr/defects4j_projects/petke'
-BASE_PATCH_DIR = '/home/user/x/fyp-overfitting-mitigation-apr/datasets/petke/all_patches'
+BASE_BUG_DIR = '/home/user/x/apr-overfitting-benchmark/defects4j_projects/petke'
+BASE_PATCH_DIR = '/home/user/x/apr-overfitting-benchmark/datasets/petke/all_patches'
 
 # Replaced for new patches
 OUTPUTS_DIR = 'fixcheck-output'
-DATASET_CSV = 'experiments/repairllama_processed.csv'
+DATASET_CSV = 'experiments/8h-deduplicated_processed.csv'
 
 def log_failed_patch_compilation(patch_name, return_code, std_out, std_err):
     with open('failed_compilations.log', "a") as log_file:
