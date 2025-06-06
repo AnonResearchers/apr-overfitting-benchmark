@@ -5,8 +5,7 @@ import os
 import argparse
 
 # Replace with your Java 11 path
-# JAVA_11_PATH = "/usr/lib/jvm/java-1.11.0-openjdk-amd64"
-JAVA_11_PATH = "/opt/homebrew/Cellar/openjdk@11/11.0.27/libexec/openjdk.jdk/Contents/Home"
+JAVA_11_PATH = "/usr/lib/jvm/java-1.11.0-openjdk-amd64"
 
 DATASET_PATHS = {
     "repairllama": Path("../datasets/repairllama/context_size_3_filtered"),
