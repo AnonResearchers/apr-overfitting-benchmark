@@ -145,16 +145,17 @@ The Invalidator paper does not provide publicly available scripts for invariant 
   - Then add Daikon relevant values to bashrc: `export DAIKONDIR="/home/user/workspace/daikon-5.8.20"` `export PATH=$DAIKONDIR:$PATH` `export CLASSPATH=$DAIKONDIR/daikon.jar:$CLASSPATH`
   - `make -C $DAIKONDIR rebuild-everything`
 2. Install required libraries: `conda env create -f environment.yml`
-3. In `petke.py` (for the classical dataset) and `repairllama.py` (for the repairllama dataset) at the top replace the JAVA_11_HOME constant with your path to your java 11 installation and the patches path as instructed by the comments.
-4. Generate invariants using Daikon and Defects4J by running:
+3. We found a missing dependency: `pip install javalang`.
+4. In `petke.py` (for the classical dataset) and `repairllama.py` (for the repairllama dataset) at the top replace the JAVA_11_HOME constant with your path to your java 11 installation and the patches path as instructed by the comments.
+5. Generate invariants using Daikon and Defects4J by running:
   - Classical Dataset: `python petke.py`
   - Repairllama Dataset: `python repairllama.py`
-5. To analyse invariants and classify patches, run:
+6. To analyse invariants and classify patches, run:
   - Classical Dataset: `python petke_experiment.py --c 0`
   - Repairllama Dataset: `python repairllama_experiment.py --c 0`
-6. Results will be saved under:
+7. Results will be saved under:
   - Classical Dataset: `petke_results.csv`
-  - Repairllama Dataset: `repairllama_results.csv` 
+  - Repairllama Dataset: `repairllama_results.csv`
 
 ---
 
@@ -173,9 +174,12 @@ X. Zhou, B. Xu, K. Kim, D. Han, H. H. Nguyen, T. Le-Cong, J. He, B. Le, and D. L
 
 LLM4PatchCorrect required specific project attributes for each patch in its experimental setup. These included test method names exposing the bug, test method bodies exposing the bug, test coverage information, bug information as provided by Defects4J which is usually a report by a developer explaining the bug, and execution traces of failed tests. These data points were systematically extracted from Defects4J metadata and cross-verified against the original experimental artefact to confirm accuracy in format and content.
 
-**Instructions:**  
+**Instructions:**
+
+0. We were able to replicate these experiments using `Python 3.9.23`.
 1. Run `bash install_library.sh`
 2. To download the model via terminal:
+  - NOTE: The download link in the repository is currently unavailable (404 Error). Thus, we have included in our repository the model we downloaded when the link was available.
   - `pip install gdown`
   - `gdown --folder https://drive.google.com/drive/folders/1MryWp2iqXAVo4UHxnN-bTspQkysM7Fpy?usp=sharing` (link from the original repository)
   - Place it under `pretrained_model/best`
