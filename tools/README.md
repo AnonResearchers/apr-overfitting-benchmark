@@ -101,23 +101,26 @@ in 2024 *IEEE Conference on Software Testing, Verification and Validation (ICST)
 
 FIXCHECK Required specific metadata related to each Defects4J project under evaluation. This metadata included the Defects4J project and bug version, main dependencies, build directory, test source directory, test class names exposing the bug, test method names exposing the bug, class names containing the bug. FIXCHECK’s original experiment on a dataset of Defects4J patches provided most of this information; however, three projects lacked this metadata, which were prepared manually to match FIXCHECK’s required format.
 
+**Note: The model used by this tool requires substantial GPU power. We were able to complete our experiments using an NVIDIA RTX 3090.**
+
 **Instructions:**  
 1. Follow setup instructions in `fixcheck/README.md`
 2. We found an issue setting up llama-cpp which we resolved by installing via URL: `pip install --no-cache-dir llama-cpp-python==0.2.85 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu122`
-3. Configure the scripts for your environment by replacing the five constants at the top as instructed by the comments to include your own java path etc. in the following files for each dataset:
+3. Once you have installed the dependencies for the replit model, run `pip install transformers==4.33.1`.
+4. Configure the scripts for your environment by replacing the five constants at the top as instructed by the comments to include your own java path etc. in the following files for each dataset:
   - Classical Dataset: In `experiments/run-fixcheck-petke.py` 
   - Repairllama Dataset: In `experiments/run-fixcheck-repairllama.py`
-4. In one terminal, launch the LLM by running `python llms/replit-code.py` and wait until it is running.
-5. In another terminal, launch fixcheck by running:
+5. In one terminal, launch the LLM by running `python llms/replit-code.py` and wait until it is running.
+6. In another terminal, launch fixcheck by running:
   - Classical Dataset: `python experiments/run-fixcheck-petke.py`
   - Repairllama Dataset: `python experiments/run-fixcheck-repairllama.py`
-6. Once fixcheck is done, this will generate an output folder at `fixcheck-output/`. Rename these as the following:
+7. Once fixcheck is done, this will generate an output folder at `fixcheck-output/`. Rename these as the following:
   - Classical Dataset: `fixcheck-output/` -> `classical-fixcheck-output/`
   - Repairllama Dataset: `fixcheck-output/` -> `repairllama-fixcheck-output/`
-7. Get patch classifications by running:
+8. Get patch classifications by running:
   - Classical Dataset: `python get_results.py --results-dir classical-fixcheck-output/defects-repairing --patches-dir ../../datasets/petke/all_patches --out fixcheck_results_8h.csv`
   - Repairllama Dataset: `python get_results.py --results-dir repairllama-fixcheck-output/defects-repairing --patches-dir ../../datasets/repairllama/context_size_3_filtered --out fixcheck_results_repairllama.csv`
-8. Results will be saved under:
+9. Results will be saved under:
   - Classical Dataset: `fixcheck_results_8h.csv`
   - Repairllama Dataset: `fixcheck_results_repairllama.csv`
 
@@ -173,6 +176,8 @@ X. Zhou, B. Xu, K. Kim, D. Han, H. H. Nguyen, T. Le-Cong, J. He, B. Le, and D. L
 **Preprocessing:**
 
 LLM4PatchCorrect required specific project attributes for each patch in its experimental setup. These included test method names exposing the bug, test method bodies exposing the bug, test coverage information, bug information as provided by Defects4J which is usually a report by a developer explaining the bug, and execution traces of failed tests. These data points were systematically extracted from Defects4J metadata and cross-verified against the original experimental artefact to confirm accuracy in format and content.
+
+**Note: The model used by this tool requires substantial GPU power. We were able to complete our experiments using an NVIDIA RTX 3090.**
 
 **Instructions:**
 
