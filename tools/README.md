@@ -177,6 +177,7 @@ LLM4PatchCorrect required specific project attributes for each patch in its expe
 **Instructions:**
 
 1. Run `bash install_library.sh`
+  - This script is a list of dependencies which allowed us to run the experiments in our environment. If these do not work for you, we recommend starting from the original dependency list provided by the authors, which we include as `original_install_library.sh`.
 2. To download the model via terminal:
   - NOTE: The download link in the repository is currently unavailable (404 Error). Thus, we have included in our repository the model we downloaded when the link was available.
   - `pip install gdown`
