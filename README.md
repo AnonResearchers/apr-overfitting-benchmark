@@ -1,5 +1,5 @@
-# Empirical Evaluation of Patch Overfitting Detection Approaches in Automated Program Repair
-This is the replication package for "Empirical Evaluation of Patch Overfitting Detection Approaches in Automated Program Repair", submitted to the ASE 2025 conference. We will add a permissive open-source license upon acceptance.
+# Unveiling Shortcomings of Existing Patch Overfitting Detection Approaches in Practice
+This is the replication package for "Unveiling Shortcomings of Existing Patch Overfitting Detection Approaches in Practice", submitted to the FSE 2026 conference. We will add a permissive open-source license upon acceptance.
 
 ## Structure
 
